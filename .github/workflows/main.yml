@@ -25,29 +25,25 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Android Release
-          path: |
-            build/app/outputs/flutter-apk/app.release.apk
+          path: build/app/outputs/flutter-apk/app.release.apk
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4
         with:
           name: Web Release
-          path: |
-            build/web/
+          path: build/web/
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4
         with:
           name: Windows Release
-          path: |
-            build/windows/x64/runner/Release/openwrt_flutter.exe
+          path: build/windows/x64/runner/Release/openwrt_flutter.exe
             
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4
         with:
           name: iOS Release
-          path: |
-            build/ios/ipa/*.ipa 
+          path: build/ios/ipa/*.ipa 
 
       - name: Upload Continuous Release
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' && github.repository == 'kattschan/openwrt_flutter' }}
