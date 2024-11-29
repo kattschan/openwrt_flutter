@@ -1,16 +1,9 @@
 # openwrt_flutter
 
-A new Flutter project.
+An app to view stats about your OpenWRT instance on the go. Currently shows WiFi details and devices.
 
-## Getting Started
+# Setup instructions
 
-This project is a starting point for a Flutter application.
+openwrt_flutter uses ubus to retrieve information. By default, you cannot retrieve information from ubus over the network, so you will need to configure it based on the instructions found [here](https://openwrt.org/docs/techref/ubus). I just setup the superuser config since my router isn't exposed to the internet, but you can allow it fine grained access as you prefer.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Demo
