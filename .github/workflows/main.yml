@@ -42,7 +42,7 @@ jobs:
           path: build/web/
 
       - name: Create Continuous Release
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' && github.repository == 'kattschan/openwrt_flutter' }}
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && github.repository == 'kattschan/openwrt_flutter' }}
         shell: bash
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
