@@ -1,6 +1,6 @@
 # openwrt_flutter
 
-An app to view stats about your OpenWRT instance on the go. Currently shows WiFi details and devices.
+An app to view stats about your OpenWRT instance on the go. Currently shows WiFi details and devices. **If you're watching the demo I recommend 2x speed**
 
 # Setup instructions
 
