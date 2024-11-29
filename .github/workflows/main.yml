@@ -50,6 +50,6 @@ jobs:
         shell: bash
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          run: |
+        run: |
             curl -fLOSs --retry 2 --retry-delay 60 https://github.com/probonopd/uploadtool/raw/master/upload.sh
             bash upload.sh build/app/outputs/flutter-apk/app.release.apk build/windows/x64/runner/Release/openwrt_flutter.exe
