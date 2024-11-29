@@ -8,7 +8,7 @@
 PRODUCT_NAME = openwrt_flutter
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.example.openwrtFlutter
+PRODUCT_BUNDLE_IDENTIFIER = uk.co.kattschan.openwrtFlutter
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2024 com.example. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2024 uk.co.kattschan. All rights reserved.

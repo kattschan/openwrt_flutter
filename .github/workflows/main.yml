@@ -2,13 +2,13 @@ name: Continuous Release
 on:
   push:
     paths-ignore:
-    - 'README.md'
+      - "README.md"
   pull_request:
     paths-ignore:
-    - 'README.md'
+      - "README.md"
 jobs:
   main:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Clone repository
         uses: actions/checkout@v4
@@ -17,7 +17,6 @@ jobs:
         with:
           channel: stable
       - run: flutter pub get
-      - run: flutter build ipa --release --no-codesign
       - run: flutter build apk --release
       - run: flutter build web --release
 
@@ -26,7 +25,7 @@ jobs:
         with:
           name: Android Release
           path: |
-            build/app/outputs/flutter-apk/app.release.apk
+            build/app/outputs/flutter-apk/app-release.apk
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4
@@ -35,20 +34,6 @@ jobs:
           path: |
             build/web/
 
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: Windows Release
-          path: |
-            build/windows/x64/runner/Release/openwrt_flutter.exe
-            
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: iOS Release
-          path: |
-            build/ios/ipa/*.ipa 
-
       - name: Upload Continuous Release
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' && github.repository == 'kattschan/openwrt_flutter' }}
         shell: bash
@@ -56,4 +41,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           run: |
             curl -fLOSs --retry 2 --retry-delay 60 https://github.com/probonopd/uploadtool/raw/master/upload.sh
-            bash upload.sh build/app/outputs/flutter-apk/app.release.apk build/windows/x64/runner/Release/openwrt_flutter.exe
+            bash upload.sh build/app/outputs/flutter-apk/app-release.apk
